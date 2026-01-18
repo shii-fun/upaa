@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upaco | Threads × ファン化で理想の働き方を手に入れる</title>
+    <meta name="description" content="ファン化特化のSNS運用を得意とするupacoが、Threads × マネタイズであなたの価値を高めるサポートをします。">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Noto Sans JP & Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sky-blue: #74b9ff;
+            --soft-purple: #a29bfe;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-main);
+            background-color: #fdfeff;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+
+        /* フェードインアニメーション */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 背景の雲のようなグラデーションアニメーション */
+        .cloud-bg {
+            background: linear-gradient(135deg, #fdfeff 0%, #f0f7ff 100%);
+            position: relative;
+        }
+        
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(116, 185, 255, 0.15) 0%, rgba(162, 155, 254, 0.1) 50%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(10%, 10%); }
+        }
+
+        /* ガラス質感 */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        /* 特殊なボタン */
+        .btn-primary {
+            background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 100%);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(116, 185, 255, 0.3);
+        }
+
+        .section-padding { padding: 10rem 0; }
+        @media (max-width: 768px) {
+            .section-padding { padding: 6rem 0; }
+        }
+
+        /* カスタム箇条書き */
+        .custom-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .custom-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--sky-blue);
+            font-weight: bold;
+        }
+
+        /* スムーススクロール */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="cloud-bg">
+    <div class="blob" style="top: 10%; left: -5%;"></div>
+    <div class="blob" style="bottom: 10%; right: -5%; animation-delay: -5s;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-serif font-semibold tracking-[0.3em] uppercase">upaco</div>
+            <div class="hidden md:flex space-x-10 text-xs font-bold tracking-[0.2em] uppercase">
+                <a href="#about" class="hover:text-blue-500 transition-colors">About</a>
+                <a href="#service" class="hover:text-blue-500 transition-colors">Service</a>
+                <a href="#strength" class="hover:text-blue-500 transition-colors">Strength</a>
+                <a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a>
+            </div>
+            <a href="https://lin.ee/MU6jt2m" target="_blank" class="bg-gray-900 text-white px-6 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase hover:bg-blue-500 transition-all">
+                LINE相談
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="reveal inline-block mb-6">
+                <span class="px-4 py-1 border border-blue-200 rounded-full text-blue-400 text-[10px] font-bold tracking-[0.3em] uppercase">
+                    Threads × Fan-base Branding
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-7xl font-bold leading-[1.3] mb-8 reveal" style="transition-delay: 0.2s;">
+                Threadsであなたの<br>
+                「価値」はもっと輝く。
+            </h1>
+            <p class="text-gray-500 text-sm md:text-lg mb-12 max-w-2xl mx-auto leading-loose reveal" style="transition-delay: 0.4s;">
+                数字を追うだけのSNS運用は、もうおしまい。<br class="hidden md:block">
+                自分らしさを大切にしながら、長く愛されるファン化の仕組みを。<br>
+                upacoがあなたの「理想の働き方」への歩みを支えます。
+            </p>
+            <div class="reveal" style="transition-delay: 0.6s;">
+                <a href="https://lin.ee/MU6jt2m" target="_blank" class="btn-primary inline-block text-white px-12 py-5 rounded-full text-sm font-bold tracking-widest shadow-xl">
+                    無料で相談してみる
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-[10px] tracking-widest text-gray-400 uppercase opacity-60">
+            <span>Scroll</span>
+            <div class="w-[1px] h-12 bg-gray-300 mt-2"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+                <div class="w-full md:w-1/2 reveal">
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-blue-100 to-purple-100 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-80 transition duration-1000"></div>
+                        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=80" alt="Work Life Balance" class="w-full h-auto transform group-hover:scale-105 transition duration-700">
+                        </div>
+                        <div class="absolute -bottom-8 -left-8 glass p-8 rounded-3xl hidden md:block">
+                            <p class="font-serif italic text-2xl text-blue-400 leading-none">Stay True</p>
+                            <p class="text-[10px] font-bold tracking-widest uppercase mt-2">to yourself</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 reveal" style="transition-delay: 0.3s;">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">オンリーワンの働き方を、<br>ここから。</h2>
+                    <div class="space-y-6 text-gray-600">
+                        <p>
+                            SNSは「戦う場所」ではなく、あなたという個性が「響く場所」であるべきだとupacoは考えます。
+                        </p>
+                        <p>
+                            流行りのノウハウに振り回されて、本来の自分を見失っていませんか？
+                            一過性のバズよりも、たった一人の心に深く届く言葉が、あなたのビジネスを支える強固な基盤になります。
+                        </p>
+                        <p>
+                            Threadsという新しい波に乗り、無理なく、心地よく、そして着実に。「家で働きながら月10万円」という理想を、共創しましょう。
+                        </p>
+                    </div>
+                    <div class="mt-10 flex items-center gap-4">
+                        <div class="h-[1px] w-12 bg-blue-300"></div>
+                        <span class="font-serif italic text-xl text-blue-400">upaco philosophy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Section -->
+    <section id="service" class="section-padding bg-slate-50/50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-xl mb-20 reveal">
+                <p class="text-blue-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Service Menu</p>
+                <h2 class="text-3xl md:text-5xl font-bold">あなたの価値を<br>最大化する。</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 01 -->
+                <div class="glass p-12 rounded-[3rem] reveal border-none shadow-sm hover:shadow-xl transition-all duration-500" style="transition-delay: 0.1s;">
+                    <span class="text-5xl font-serif text-blue-100 block mb-6">01</span>
+                    <h3 class="text-xl font-bold mb-6">Threadsマネタイズ<br>戦略コンサル</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                        あなたの強みを整理し、収益化までの最短ルートを設計。何を発信すべきか、その「芯」を一緒に作ります。
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2 custom-list">
+                        <li>コンセプト設計</li>
+                        <li>導線・販売設計</li>
+                        <li>個別Zoomセッション</li>
+                    </ul>
+                </div>
+                <!-- Card 02 -->
+                <div class="glass p-12 rounded-[3rem] reveal border-none shadow-sm hover:shadow-xl transition-all duration-500" style="transition-delay: 0.2s;">
+                    <span class="text-5xl font-serif text-purple-100 block mb-6">02</span>
+                    <h3 class="text-xl font-bold mb-6">ファン化<br>ブランディング</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                        「代わりがいない存在」になるための見せ方を。ライティング指導から世界観作りまでトータルでサポート。
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2 custom-list">
+                        <li>独自ブランド構築</li>
+                        <li>ライティング添削</li>
+                        <li>ファン化コミュニケーション</li>
+                    </ul>
+                </div>
+                <!-- Card 03 -->
+                <div class="glass p-12 rounded-[3rem] reveal border-none shadow-sm hover:shadow-xl transition-all duration-500" style="transition-delay: 0.3s;">
+                    <span class="text-5xl font-serif text-green-100 block mb-6">03</span>
+                    <h3 class="text-xl font-bold mb-6">在宅ワーク<br>スタート支援</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                        時間に縛られない働き方を実現するための、タスク管理やモチベーション維持の仕組みをお伝えします。
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2 custom-list">
+                        <li>時間管理術</li>
+                        <li>継続のためのマインド</li>
+                        <li>作業環境のアドバイス</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strength Section -->
+    <section id="strength" class="section-padding overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why upaco?</h2>
+                <div class="w-12 h-1 bg-blue-400 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto space-y-24">
+                <div class="flex flex-col md:flex-row items-center gap-12 reveal">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Philosophy" class="rounded-3xl shadow-lg">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <span class="text-blue-400 font-serif text-4xl italic">01.</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-6">「無理をしない」継続可能な設計</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            SNS運用の最大の敵は「挫折」です。1日30分からでも成果が出るよう、あなたの日常に溶け込む最適な運用フローをカスタマイズして提案します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12 reveal">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Analysis" class="rounded-3xl shadow-lg">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <span class="text-blue-400 font-serif text-4xl italic">02.</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-6">Threads特化の最新分析</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            変化の激しいThreads。アルゴリズムやユーザー層の動向を常にウォッチし、今、最も反応が良いアプローチをタイムリーに共有します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-gray-900 rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden reveal">
+                <!-- Deco in dark box -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full"></div>
+
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                        あなたの「これから」を<br>
+                        一緒に描きませんか？
+                    </h2>
+                    <p class="text-gray-400 mb-12 text-sm md:text-base leading-loose max-w-lg mx-auto">
+                        一人で考え込んでしまうと、どうしても迷路に入ってしまいます。<br>
+                        ほんの少しのきっかけで、景色は驚くほど変わります。
+                    </p>
+                    <a href="https://lin.ee/MU6jt2m" target="_blank" class="inline-flex items-center gap-3 bg-[#06C755] hover:bg-[#05b54d] text-white px-10 py-5 rounded-full text-lg font-bold transition-all shadow-xl">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 5.51 2 9.83c0 2.44 1.41 4.61 3.63 6l-.51 1.88c-.1.38.08.77.44.91.36.14.77-.02.93-.36l.99-2.12c.51.09 1.03.14 1.57.14 5.52 0 10-3.51 10-7.83S17.52 2 12 2zm0 13c-.5 0-1-.1-1.5-.2l-1 .2c-.2 0-.4-.1-.5-.2 0-.1-.1-.3 0-.4l.3-.8c-1.3-.9-2.1-2.2-2.1-3.6 0-3.1 3-5.6 6.8-5.6 3.8 0 6.8 2.5 6.8 5.6S15.8 15 12 15z"/>
+                        </svg>
+                        LINEでうぱこに相談する
+                    </a>
+                    <p class="text-[10px] text-gray-500 mt-6 tracking-widest uppercase">Response within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-gray-100 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-3xl font-serif font-semibold tracking-[0.4em] uppercase mb-8">upaco</div>
+            <nav class="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-12 text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">
+                <a href="#about" class="hover:text-blue-500">About</a>
+                <a href="#service" class="hover:text-blue-500">Service</a>
+                <a href="#strength" class="hover:text-blue-500">Strength</a>
+                <a href="#contact" class="hover:text-blue-500">Contact</a>
+                <a href="#" class="hover:text-blue-500">Privacy</a>
+            </nav>
+            <p class="text-[10px] text-gray-300 italic">© 2025 upaco. Design for your dream workstyle.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Intersection Observer for Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Sticky Nav logic (Dynamic glass effect)
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
