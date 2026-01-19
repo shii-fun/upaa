@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>upaco | Threads × ファン化で理想の働き方を手に入れる</title>
-    <meta name="description" content="ファン化特化のSNS運用を得意とするupacoが、Threads × マネタイズであなたの価値を高めるサポートをします。">
+    <meta name="description" content="ファン化特化 of SNS運用を得意とするupacoが、Threads × マネタイズであなたの価値を高めるサポートをします。">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,7 +16,7 @@
         :root {
             --pastel-blue: #e3f2fd;
             --pastel-pink: #fce4ec;
-            --accent-blue: #90caf9;
+            --accent-blue: #64b5f6; /* 少し濃い目の水色 */
             --accent-pink: #f48fb1;
             --text-main: #454d55;
             --text-light: #7a8691;
@@ -78,6 +78,27 @@
             100% { transform: translate(10%, 10%) scale(1.1); }
         }
 
+        /* カスタムパステルヘッダー */
+        .nav-glass {
+            background: rgba(240, 249, 255, 0.7); /* ほんのり水色ベースのガラス */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(100, 181, 246, 0.15);
+            transition: all 0.4s ease;
+        }
+        
+        .nav-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background: var(--pastel-blue); /* ホバー時も水色 */
+            color: var(--accent-blue);
+        }
+
         /* ガラス質感 */
         .glass {
             background: rgba(255, 255, 255, 0.5);
@@ -86,12 +107,12 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
-        /* パステルグラデーションボタン */
-        .btn-line {
+        /* LINEボタンのスタイル */
+        .btn-line-cta {
             background: #06C755;
             transition: all 0.3s ease;
         }
-        .btn-line:hover {
+        .btn-line-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(6, 199, 85, 0.2);
         }
@@ -118,46 +139,59 @@
     <div class="blob blob-pink"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass px-6 py-4">
+    <nav class="fixed w-full z-50 nav-glass px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="text-xl md:text-2xl font-serif font-semibold tracking-[0.3em] uppercase">upaco</div>
-            <div class="hidden md:flex space-x-10 text-[10px] font-bold tracking-[0.2em] uppercase">
-                <a href="#about" class="hover:text-pink-400 transition-colors">About</a>
-                <a href="#service" class="hover:text-pink-400 transition-colors">Service</a>
-                <a href="#strength" class="hover:text-pink-400 transition-colors">Strength</a>
-                <a href="#contact" class="hover:text-pink-400 transition-colors">Contact</a>
+            <!-- ロゴをピンクに変更 -->
+            <div class="text-xl md:text-2xl font-serif font-medium tracking-[0.5em] uppercase text-pink-300">upaco</div>
+            <div class="flex space-x-2 md:space-x-4 text-[10px] font-bold tracking-[0.2em] uppercase">
+                <a href="#about" class="nav-item">About</a>
+                <a href="#service" class="nav-item">Service</a>
+                <a href="#strength" class="nav-item">Strength</a>
+                <!-- メニュー文字は水色のまま -->
+                <a href="#contact" class="nav-item text-blue-400">Contact</a>
             </div>
-            <a href="https://lin.ee/MU6jt2m" target="_blank" class="bg-pink-300 text-white px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase hover:bg-pink-400 transition-all">
-                LINE相談
-            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <div class="reveal inline-block mb-8">
-                <span class="px-4 py-1 bg-white/50 border border-pink-100 rounded-full text-pink-400 text-[10px] font-bold tracking-[0.3em] uppercase">
-                    Threads × Fan-base Branding
-                </span>
+    <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- タイトル部分は左詰め -->
+            <div class="text-left mb-16">
+                <div class="reveal inline-block mb-8">
+                    <!-- ラベルをピンクに変更 -->
+                    <span class="px-4 py-1 bg-white/60 border border-pink-100 rounded-full text-pink-400 text-[10px] font-bold tracking-[0.3em] uppercase shadow-sm">
+                        Threads × Fan-base Branding
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-7xl font-bold leading-[1.4] md:leading-[1.3] reveal" style="transition-delay: 0.2s;">
+                    <span class="md:hidden text-left block">Threadsで<br>あなたの「価値」は<br>もっと輝く。</span>
+                    <span class="hidden md:block">Threadsであなたの「価値」は<br>もっと輝く。</span>
+                </h1>
             </div>
-            <!-- スマホでの改行を最適化 -->
-            <h1 class="text-4xl md:text-7xl font-bold leading-[1.4] md:leading-[1.3] mb-10 reveal" style="transition-delay: 0.2s;">
-                <span class="md:hidden">Threadsで<br>あなたの「価値」は<br>もっと輝く。</span>
-                <span class="hidden md:block">Threadsであなたの「価値」は<br>もっと輝く。</span>
-            </h1>
-            <p class="text-gray-500 text-sm md:text-lg mb-12 max-w-2xl mx-auto leading-loose reveal" style="transition-delay: 0.4s;">
-                <span class="md:hidden">数字を追うだけのSNS運用は、<br>もうおしまい。</span>
-                <span class="hidden md:block">数字を追うだけのSNS運用は、もうおしまい。</span><br>
-                自分らしさを大切にしながら、<br class="md:hidden">長く愛されるファン化の仕組みを。<br>
-                upacoがあなたの「理想の働き方」への<br class="md:hidden">歩みを支えます。
-            </p>
+
+            <!-- 説明文とCTAはセンター -->
+            <div class="text-center mx-auto max-w-2xl reveal" style="transition-delay: 0.4s;">
+                <p class="text-gray-500 text-sm md:text-lg mb-12 leading-loose">
+                    <span class="md:hidden">数字を追うだけのSNS運用は、<br>もうおしまい。</span>
+                    <span class="hidden md:block">数字を追うだけのSNS運用は、もうおしまい。</span><br>
+                    自分らしさを大切にしながら、<br class="md:hidden">長く愛されるファン化の仕組みを。<br>
+                    upacoがあなたの「理想の働き方」への<br class="md:hidden">歩みを支えます。
+                </p>
+
+                <div class="reveal" style="transition-delay: 0.6s;">
+                    <a href="https://lin.ee/MU6jt2m" target="_blank" class="btn-line-cta inline-flex items-center gap-3 text-white px-10 py-5 rounded-full text-base md:text-lg font-bold shadow-lg">
+                        LINEで🎁を受け取る
+                    </a>
+                </div>
+            </div>
         </div>
         
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-[9px] tracking-[0.3em] text-pink-300 uppercase opacity-80">
+        <!-- Scroll indicator 水色のまま -->
+        <div class="absolute bottom-10 left-6 flex flex-col items-center text-[9px] tracking-[0.3em] text-blue-300 uppercase opacity-80">
             <span>Scroll</span>
-            <div class="w-[1px] h-10 bg-gradient-to-b from-pink-200 to-transparent mt-2"></div>
+            <div class="w-[1px] h-10 bg-gradient-to-b from-blue-200 to-transparent mt-2"></div>
         </div>
     </section>
 
@@ -172,7 +206,7 @@
                             <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=80" alt="Work Life Balance" class="w-full h-auto">
                         </div>
                         <div class="absolute -bottom-6 -left-6 glass p-6 md:p-8 rounded-3xl hidden md:block">
-                            <p class="font-serif italic text-2xl text-pink-300 leading-none">Stay True</p>
+                            <p class="font-serif italic text-2xl text-blue-300 leading-none">Stay True</p>
                             <p class="text-[9px] font-bold tracking-widest uppercase mt-2 text-gray-400">to yourself</p>
                         </div>
                     </div>
@@ -196,8 +230,8 @@
                         </p>
                     </div>
                     <div class="mt-10 flex items-center gap-4">
-                        <div class="h-[1px] w-12 bg-pink-200"></div>
-                        <span class="font-serif italic text-xl text-pink-300">upaco philosophy</span>
+                        <div class="h-[1px] w-12 bg-blue-100"></div>
+                        <span class="font-serif italic text-xl text-blue-300">upaco philosophy</span>
                     </div>
                 </div>
             </div>
@@ -205,10 +239,10 @@
     </section>
 
     <!-- Service Section -->
-    <section id="service" class="section-padding bg-pink-50/30">
+    <section id="service" class="section-padding bg-blue-50/20">
         <div class="container mx-auto px-6">
             <div class="max-w-xl mb-16 reveal">
-                <p class="text-pink-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Service Menu</p>
+                <p class="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Service Menu</p>
                 <h2 class="text-3xl md:text-5xl font-bold">あなたの価値を<br>最大化する。</h2>
             </div>
             
@@ -218,7 +252,7 @@
                     <span class="text-4xl font-serif text-blue-200 block mb-6">01</span>
                     <h3 class="text-lg font-bold mb-4">Threadsマネタイズ<br>戦略コンサル</h3>
                     <p class="text-gray-400 text-xs leading-relaxed mb-8">
-                        あなたの強みを整理し、収益化までの最短ルートを設計。何を発信すべきか、その「芯」を一緒に作ります。
+                        あなたの強みを整理し、収益化までの最短ルートを設計. 何を発信すべきか、その「芯」を一緒に作ります.
                     </p>
                     <ul class="text-[10px] text-gray-400 space-y-2 custom-list pl-5 relative">
                         <li class="relative pl-4">コンセプト設計</li>
@@ -261,7 +295,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-20 reveal">
                 <h2 class="text-3xl font-bold mb-4">Why upaco?</h2>
-                <div class="w-10 h-1 bg-pink-100 mx-auto rounded-full"></div>
+                <div class="w-10 h-1 bg-blue-100 mx-auto rounded-full"></div>
             </div>
             
             <div class="max-w-4xl mx-auto space-y-20 md:space-y-32">
@@ -270,7 +304,7 @@
                         <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Philosophy" class="rounded-[2rem] shadow-sm">
                     </div>
                     <div class="w-full md:w-1/2">
-                        <span class="text-pink-200 font-serif text-4xl italic block mb-4">01.</span>
+                        <span class="text-blue-200 font-serif text-4xl italic block mb-4">01.</span>
                         <h3 class="text-xl md:text-2xl font-bold mb-6">「無理をしない」<br>継続可能な運用設計</h3>
                         <p class="text-gray-500 text-sm md:text-base leading-relaxed">
                             SNS運用の最大の敵は「挫折」です。<br>
@@ -308,10 +342,7 @@
                         一人で考え込んでしまうと、<br class="md:hidden">どうしても迷路に入ってしまいます。<br>
                         ほんの少しのきっかけで、<br class="md:hidden">景色は驚くほど変わります。
                     </p>
-                    <a href="https://lin.ee/MU6jt2m" target="_blank" class="btn-line inline-flex items-center gap-3 text-white px-10 py-5 rounded-full text-lg font-bold shadow-lg">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 5.51 2 9.83c0 2.44 1.41 4.61 3.63 6l-.51 1.88c-.1.38.08.77.44.91.36.14.77-.02.93-.36l.99-2.12c.51.09 1.03.14 1.57.14 5.52 0 10-3.51 10-7.83S17.52 2 12 2zm0 13c-.5 0-1-.1-1.5-.2l-1 .2c-.2 0-.4-.1-.5-.2 0-.1-.1-.3 0-.4l.3-.8c-1.3-.9-2.1-2.2-2.1-3.6 0-3.1 3-5.6 6.8-5.6 3.8 0 6.8 2.5 6.8 5.6S15.8 15 12 15z"/>
-                        </svg>
+                    <a href="https://lin.ee/MU6jt2m" target="_blank" class="btn-line-cta inline-flex items-center gap-3 text-white px-10 py-5 rounded-full text-lg font-bold shadow-lg">
                         うぱこに相談する
                     </a>
                     <p class="text-[9px] text-gray-400 mt-8 tracking-widest uppercase">Response within 24 hours</p>
@@ -321,14 +352,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-16 border-t border-pink-50 bg-white">
+    <footer class="py-16 border-t border-blue-50 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <div class="text-2xl font-serif font-semibold tracking-[0.4em] uppercase mb-8">upaco</div>
+            <!-- フッターのロゴもピンクに変更 -->
+            <div class="text-2xl font-serif font-semibold tracking-[0.4em] uppercase mb-8 text-pink-300">upaco</div>
             <nav class="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-10 text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400">
-                <a href="#about" class="hover:text-pink-300 transition-colors">About</a>
-                <a href="#service" class="hover:text-pink-300 transition-colors">Service</a>
-                <a href="#strength" class="hover:text-pink-300 transition-colors">Strength</a>
-                <a href="#contact" class="hover:text-pink-300 transition-colors">Contact</a>
+                <a href="#about" class="hover:text-blue-300 transition-colors">About</a>
+                <a href="#service" class="hover:text-blue-300 transition-colors">Service</a>
+                <a href="#strength" class="hover:text-blue-300 transition-colors">Strength</a>
+                <a href="#contact" class="hover:text-blue-300 transition-colors">Contact</a>
             </nav>
             <p class="text-[9px] text-gray-300 italic">© 2025 upaco. Gentle support for your dream.</p>
         </div>
@@ -356,10 +388,12 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.padding = '1rem 1.5rem';
+                nav.style.padding = '0.8rem 1.5rem';
+                nav.style.background = 'rgba(240, 249, 255, 0.9)';
                 nav.classList.add('shadow-sm');
             } else {
-                nav.style.padding = '1.5rem';
+                nav.style.padding = '1.2rem 1.5rem';
+                nav.style.background = 'rgba(240, 249, 255, 0.7)';
                 nav.classList.remove('shadow-sm');
             }
         });
