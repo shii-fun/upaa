@@ -4,113 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>うぱこ | オンリーワンのファン化マネタイズ</title>
-    <meta name="description" content="Threads×noteで収益化。オンリーワン의ファン化術を伝え、あなたのビジネスを加速させます。">
+    <meta name="description" content="Threads×note for monetization. I will teach you the art of one-of-a-kind fan acquisition to accelerate your business.">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Amsterdam Font Fallback / Alternative -->
+    <link href="https://fonts.cdnfonts.com/css/amsterdam" rel="stylesheet">
+    
     <style>
         :root {
-            --color-primary: #38bdf8;
+            --color-primary: #87ceeb; 
             --color-secondary: #f0f9ff;
-            --color-accent: #f472b6;
+            --color-accent: #ffb6c1;
             --color-white: #ffffff;
             --text-main: #334155;
         }
+        
         body {
             font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
             color: var(--text-main);
             background-color: var(--color-white);
             overflow-x: hidden;
+            word-wrap: break-word;
+            overflow-wrap: anywhere;
         }
+
         .bg-upa-gradient {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fff1f2 100%);
+            background: linear-gradient(135deg, #cedcef 0%, #ffffff 100%);
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
+
+        /* アニメーション用のクラス */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
+
         .floating {
             animation: floating 4s ease-in-out infinite;
         }
+
         @keyframes floating {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
+
         .btn-hover {
             transition: all 0.3s ease;
         }
+
         .btn-hover:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 12px 24px rgba(135, 206, 235, 0.3);
         }
+
         .upa-logo {
             color: var(--color-primary);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
+
+        .upa-footer-logo {
+            font-family: 'Amsterdam Four', 'Amsterdam', sans-serif;
+            color: var(--color-primary);
+            line-height: 1.4;
+        }
+
         .text-fan { color: var(--color-accent); }
+
+        /* スムーススクロール */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="fixed w-full z-50 px-6 py-4">
-        <nav class="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3 shadow-sm">
-            <div class="text-2xl font-bold tracking-tighter upa-logo">うぱこ</div>
+    <header class="fixed w-full z-50 px-3 md:px-6 py-4">
+        <nav class="max-w-7xl mx-auto flex justify-end items-center glass-card rounded-full px-5 md:px-8 py-3 shadow-sm">
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-sky-400 transition">About</a>
-                <a href="#services" class="hover:text-sky-400 transition">Services</a>
-                <a href="#works" class="hover:text-sky-400 transition">Activity</a>
-                <a href="https://lin.ee/wDYTdkd" target="_blank" rel="noopener noreferrer" class="text-sky-500 font-bold">LINE登録</a>
+                <a href="#about" class="hover:text-[#ffb6c1] transition">about</a>
+                <a href="#services" class="hover:text-[#ffb6c1] transition">services</a>
+                <a href="https://lin.ee/wDYTdkd" target="_blank" rel="noopener noreferrer" class="text-[#ffb6c1] font-bold">LINE登録</a>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden ml-auto">
+                 <a href="https://lin.ee/wDYTdkd" target="_blank" rel="noopener noreferrer" class="text-[10px] sm:text-xs bg-[#87ceeb] text-white px-3 sm:px-4 py-2 rounded-full font-bold">LINE登録</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden bg-upa-gradient">
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-12 overflow-hidden bg-upa-gradient">
+        <!-- Decoration background -->
         <div class="absolute inset-0 opacity-40">
-            <div class="absolute top-20 left-10 w-64 h-64 bg-white rounded-full mix-blend-overlay filter blur-3xl floating"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-sky-100 rounded-full mix-blend-overlay filter blur-3xl floating" style="animation-delay: 1.5s;"></div>
+            <div class="absolute top-20 left-10 w-48 h-48 md:w-64 md:h-64 bg-white rounded-full mix-blend-overlay filter blur-3xl floating"></div>
+            <div class="absolute bottom-10 right-10 w-72 h-72 bg-sky-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
         </div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-16">
+        <div class="container mx-auto px-5 sm:px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
                 <!-- Text Area -->
                 <div class="reveal w-full md:w-3/5 text-center md:text-left order-2 md:order-1">
-                    <span class="inline-block px-4 py-1 rounded-full bg-white text-sky-400 text-sm font-bold mb-6 shadow-sm border border-sky-100">オンリーワンのファン化術</span>
+                    <span class="inline-block px-4 py-1 rounded-full bg-white text-[#87ceeb] text-xs md:text-sm font-bold mb-6 shadow-sm border border-sky-100">オンリーワンのファン化術</span>
                     <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
                         <span class="text-fan">ファン化</span><br>
-                        <span class="text-sky-400/80">マネタイズ</span>
+                        <span class="text-[#87ceeb]/80">マネタイズ</span>
                     </h1>
                     <p class="text-base sm:text-lg lg:text-xl leading-relaxed mb-8 text-slate-600 max-w-xl mx-auto md:mx-0">
-                        Threadsであなたの「価値」がもっと輝く。<br>
-                        選ばれるための基礎基本。
+                        Threadsであなたの「価値」がもっと輝く。<br class="hidden sm:inline">
+                        選ばれる発信者になるための基礎基本。
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="https://lin.ee/wDYTdkd" target="_blank" rel="noopener noreferrer" class="btn-hover bg-sky-400 text-white font-bold px-10 py-4 rounded-full text-center shadow-lg shadow-sky-200/50">
-                            LINEで相談する
-                        </a>
-                        <a href="#services" class="btn-hover bg-white border-2 border-sky-200 text-sky-400 font-bold px-10 py-4 rounded-full text-center">
-                            詳しく見る
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start px-4 sm:px-0">
+                        <a href="https://line.me/ti/g2/DLLuZufrPNt1X-h8Gn_5n08OUHbc8hNsowhXQQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="btn-hover bg-white border-2 border-[#87ceeb] text-[#87ceeb] font-bold px-10 py-4 rounded-full text-center shadow-lg shadow-sky-100/50">
+                            うぱトーークに参加する
                         </a>
                     </div>
                 </div>
 
                 <!-- Image Area -->
                 <div class="reveal w-full md:w-2/5 flex justify-center order-1 md:order-2" style="transition-delay: 0.2s;">
-                    <div class="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl border-4 md:border-8 border-white floating shrink-0">
-                        <!-- アイコン画像をGitHubの指定URLに差し替え -->
-                        <img src="https://raw.githubusercontent.com/shii-fun/upaa/5729541f522cc6c78e4bec9f37483249a9c76f85/assets/upa.jpg" alt="うぱこビジュアル" class="w-full h-full object-cover">
+                    <div class="relative w-44 h-44 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl border-4 md:border-8 border-white floating shrink-0">
+                        <img src="https://raw.githubusercontent.com/shii-fun/upaa/5729541f522cc6c78e4bec9f37483249a9c76f85/assets/upa.jpg" alt="うぱこビジュアル" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&auto=format&fit=crop&q=60'">
                         <div class="absolute inset-0 bg-gradient-to-t from-sky-100/30 to-transparent"></div>
                     </div>
                 </div>
@@ -119,54 +148,91 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-5 sm:px-6">
             <div class="max-w-3xl mx-auto text-center reveal">
-                <h2 class="text-3xl font-bold mb-8">「あなただから」といわれる<br><span class="text-sky-400">愛される発信者</span>へ。</h2>
-                <p class="text-lg leading-loose mb-12 text-slate-500">
-                    ただフォロワーを増やすだけのフェーズは終わりです。SNSを使い、あなたの価値を「濁りのない個性」として届ける。noteでその想いを収益に変える。新しいアイコンのような明るい世界観のブランディングで、一段上のステージへ。
+                <h2 class="text-2xl sm:text-3xl font-bold mb-8 leading-snug">「あなただから」といわれる<br class="sm:hidden"><span class="text-[#87ceeb]">愛される</span>発信者へ。</h2>
+                <p class="text-base sm:text-lg leading-loose mb-12 text-slate-500 px-2 sm:px-0">
+                    「もうノウハウに価値はない」<br>
+                    AIも発達し、調べればなんでもでてくる時代です。<br>
+                    その中で「あなただけ」の価値をあげていくためには、ファン化は必須。<br>
+                    そして、そのファン化は意識を少し変えるだけで誰にでも簡単にできます。<br>
+                    ただフォロワーを増やすだけのフェーズはもう終わりです。<br>
+                    SNSでマネタイズしていきたいと思うなら、今後も生き抜いていきたいなら、ファン化ブランディング一段上のステージへいきましょう。
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-sky-50/30">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 reveal">Services</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="reveal glass-card p-8 rounded-[32px] shadow-sm hover:shadow-xl transition-all duration-500" style="transition-delay: 0.1s;">
-                    <div class="w-14 h-14 bg-sky-100 rounded-2xl flex items-center justify-center mb-6 text-2xl">💎</div>
-                    <h3 class="text-lg font-bold mb-4"><span class="text-fan">ファン化</span>マインド<br>セッション</h3>
-                    <p class="text-sm leading-relaxed opacity-80">
-                        ビジネスの土台となるマインドセットを構築。自分自身の魅力を再定義し、曇りのない発信ができる状態を作ります。
-                    </p>
+    <section id="services" class="py-16 md:py-24 bg-sky-50/30">
+        <div class="container mx-auto px-5 sm:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 reveal">Services</h2>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Service 1 -->
+                <div class="reveal glass-card p-6 md:p-8 rounded-[32px] shadow-sm hover:shadow-xl flex flex-col transition-all duration-500" style="transition-delay: 0.1s;">
+                    <div class="flex-grow">
+                        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 overflow-hidden bg-white/50">
+                            <img src="https://raw.githubusercontent.com/shii-fun/upaa/main/assets/threads-logo-black-01.png" alt="Threadsロゴ" class="w-10 h-10 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3062/3062634.png'">
+                        </div>
+                        <h3 class="text-lg font-bold mb-4"><span class="text-fan">楽しく</span>稼ぐ<br>ビジネスマインド発信</h3>
+                        <p class="text-sm leading-relaxed opacity-80">
+                            ビジネスの土台となるマインドセットを構築。ただのマインドではなく、楽しく稼ぐことが根底. 自分自身の魅力を再定義し、目標達成まで導きます。
+                        </p>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://www.threads.com/@_upacodayo" target="_blank" rel="noopener noreferrer" class="btn-hover inline-block bg-[#87ceeb] text-white font-bold px-8 py-2 rounded-full text-sm shadow-sm">
+                            見に行く
+                        </a>
+                    </div>
                 </div>
-                <div class="reveal glass-card p-8 rounded-[32px] shadow-sm hover:shadow-xl transition-all duration-500" style="transition-delay: 0.2s;">
-                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-2xl">🖋️</div>
-                    <h3 class="text-lg font-bold mb-4"><span class="text-fan">ファン化</span>術<br>note販売</h3>
-                    <p class="text-sm leading-relaxed opacity-80">
-                        Threadsからの流入を最大化し、高単価でも「あなたから買いたい」と言われるライティングと設計術を伝授。
-                    </p>
+                <!-- Service 2 -->
+                <div class="reveal glass-card p-6 md:p-8 rounded-[32px] shadow-sm hover:shadow-xl flex flex-col transition-all duration-500" style="transition-delay: 0.2s;">
+                    <div class="flex-grow">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/shii-fun/upaa/main/assets/icon.png" alt="noteアイコン" class="w-10 h-10 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2593/2593549.png'">
+                        </div>
+                        <h3 class="text-lg font-bold mb-4"><span class="text-fan">ファン化</span>術<br>note販売</h3>
+                        <p class="text-sm leading-relaxed opacity-80">
+                            実績がなくても価値は作れるということを実例を交えてまとめています。まずは月5万を叶える「誰が」の作り方と考え方。参加後に売上UPする人が続出しているセッション付き。
+                        </p>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://note.com/naasan_/n/n03d6d2567da4?sub_rt=share_sb" target="_blank" rel="noopener noreferrer" class="btn-hover inline-block bg-[#87ceeb] text-white font-bold px-8 py-2 rounded-full text-sm shadow-sm">
+                            見に行く
+                        </a>
+                    </div>
                 </div>
-                <div class="reveal glass-card p-8 rounded-[32px] shadow-sm hover:shadow-xl transition-all duration-500" style="transition-delay: 0.3s;">
-                    <div class="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 text-2xl">🫧</div>
-                    <h3 class="text-lg font-bold mb-4">ビジネス系<br>Vtuber</h3>
-                    <p class="text-sm leading-relaxed opacity-80">
-                        最新のブランディング。キャラクターを通じた親しみやすさと専門性の両立で、唯一無二のポジションを築きます。
-                    </p>
+                <!-- Service 3 -->
+                <div class="reveal glass-card p-6 md:p-8 rounded-[32px] shadow-sm hover:shadow-xl flex flex-col transition-all duration-500" style="transition-delay: 0.3s;">
+                    <div class="flex-grow">
+                        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 overflow-hidden bg-white/50">
+                            <img src="https://raw.githubusercontent.com/shii-fun/upaa/main/assets/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png" alt="Vtuberアイコン" class="w-10 h-10 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3408/3408545.png'">
+                        </div>
+                        <h3 class="text-lg font-bold mb-4"><span class="text-fan">Vtuber</span>として<br>公私のあれこれ<br>配信中</h3>
+                        <p class="text-sm leading-relaxed opacity-80">
+                            かわいいキャラクターでおしゃべりします。日常のことやSNSのこと、在宅ワークのことまで赤裸々に。ぜひ遊びに来てね！
+                        </p>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://www.youtube.com/@upacodayoo" target="_blank" rel="noopener noreferrer" class="btn-hover inline-block bg-[#87ceeb] text-white font-bold px-8 py-2 rounded-full text-sm shadow-sm">
+                            見に行く
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 bg-upa-gradient">
-        <div class="container mx-auto px-6 text-center reveal">
-            <div class="glass-card max-w-4xl mx-auto p-12 md:p-16 rounded-[48px] shadow-2xl border-none">
-                <h2 class="text-2xl md:text-5xl font-bold mb-8 text-sky-900 leading-snug">次は、あなたが<br>オンリーワンになる番です。</h2>
-                <a href="https://lin.ee/wDYTdkd" target="_blank" rel="noopener noreferrer" class="btn-hover inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-10 py-4 rounded-full text-lg md:text-xl shadow-xl transition-all">
-                    <span>LINEで友だち追加する</span>
+    <section class="py-16 md:py-24 bg-upa-gradient">
+        <div class="container mx-auto px-5 sm:px-6 text-center reveal">
+            <div class="glass-card max-w-4xl mx-auto p-8 md:p-16 rounded-[40px] md:rounded-[48px] shadow-2xl border-none">
+                <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold mb-8 text-slate-700 leading-snug">
+                    目標達成への一歩を<br>一緒に踏み出しませんか？
+                </h2>
+                <a href="https://lin.ee/wDYTdkd" target="_blank" rel="noopener noreferrer" class="btn-hover inline-flex items-center gap-3 bg-[#87ceeb] text-white font-bold px-8 md:px-10 py-4 rounded-full text-base sm:text-lg md:text-xl shadow-xl transition-all">
+                    <span>公式LINEで相談してみる</span>
                 </a>
             </div>
         </div>
@@ -174,13 +240,34 @@
 
     <!-- Footer -->
     <footer class="py-12 bg-white border-t border-sky-50 text-center">
-        <div class="text-2xl font-bold mb-6 upa-logo">うぱこ</div>
-        <p class="text-sm opacity-40">&copy; 2024 うぱこ. All Rights Reserved.</p>
+        <div class="text-2xl md:text-4xl mb-6 upa-footer-logo">
+            Thank you for reading to the end.<br>upaco
+        </div>
+        <p class="text-xs sm:text-sm opacity-40">&copy; 2025 うぱこ. All Rights Reserved.</p>
     </footer>
 
     <script>
-        window.onload = function() {
-            const observerOptions = { threshold: 0.1 };
+        // Scroll detection animation
+        window.addEventListener('DOMContentLoaded', function() {
+            // Initial check for elements already in view (like Hero section)
+            const revealOnLoad = () => {
+                const reveals = document.querySelectorAll('.reveal');
+                reveals.forEach(reveal => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    const elementVisible = 100;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            // Scroll-based observer
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -190,7 +277,10 @@
             }, observerOptions);
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        };
+            
+            // Trigger once on load
+            revealOnLoad();
+        });
     </script>
 </body>
 </html>
